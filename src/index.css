@@ -1,0 +1,49 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  background-color: #f2f2f2;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+@font-face {
+  font-family: "BaskBold";
+  src: local("Bask"),
+    url("./assets/fonts/bask/LibreBaskerville-Bold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "BaskReg";
+  src: local("Bask"),
+    url("./assets/fonts/bask/LibreBaskerville-Regular.ttf") format("truetype");
+}
+
+ul, nav{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+h1, h2, h3, h4, h5, h6, p{
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+input{
+  box-sizing: border-box;
+}
+
+img{
+  box-sizing: border-box;
+}

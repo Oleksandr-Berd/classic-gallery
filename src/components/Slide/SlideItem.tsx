@@ -1,10 +1,10 @@
-import { NavLink } from "react-router-dom";
 
 import * as SC from './SlideItemStyled'
 
 import { ImageType } from "../../utils/types";
 import modalOpen from '../../assets/images/modal_open.svg'
 import { useState } from "react";
+import SwitchSlide from '../SwitchSlide/SwitchSlide';
 
 type Props = {
   slide: ImageType | React.ReactElement;
@@ -29,21 +29,23 @@ console.log(isModal);
         <SC.ImageCon>
           <img src={images.thumbnail} alt={name} />
           <SC.ModalButton openIcon={modalOpen} onClick={handleModal}>view image</SC.ModalButton>
-          <div>
-            <h2>{name}</h2>
-            <h3>{artist.name}</h3>
+          <SC.NameCon>
+            <SC.Picture>{name}</SC.Picture>
+            <SC.Artist>{artist.name}</SC.Artist>
             <img src={artist.image} alt="artist" />
-          </div>
+          </SC.NameCon>
         </SC.ImageCon>
-        <div>
+        <SC.ContentCon>
+        <SC.Year>
           <h4>{year}</h4>
-        </div>
-        <div>
+        </SC.Year>
           <p>{description}</p>
-        </div>
-        <NavLink to={source} target="_blank" rel="noopener noreferrer">
+        </SC.ContentCon>
+        <SC.SourceLink to={source} target="_blank" rel="noopener noreferrer">
           go to source
-        </NavLink>
+        </SC.SourceLink>
+
+        <SwitchSlide name={name} artist={artist}/>
       </SC.CommonCon>
     );
   } else {

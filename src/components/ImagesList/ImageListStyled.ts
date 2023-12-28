@@ -15,6 +15,18 @@ padding-right: 24px;
 
 export const ImageItem = styled.li`
 position: relative;
+
+&::before{
+position: absolute;
+top: 0;
+left: 0;
+
+    display: inline-block;
+    content:" ";
+    width:100%;
+    min-height: 100%;
+    background: linear-gradient(transparent 50%, #000);
+}
 `
 
 export const ContentCon = styled.div`

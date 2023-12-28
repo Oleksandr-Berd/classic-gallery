@@ -1,7 +1,12 @@
+import { useNavigate } from 'react-router-dom';
 import * as SC from './LinkStyled'
 
 const LinkBtn = () => {
-    return ( <SC.LinkBtnStyled to={"slideshow"}>start slideshow</SC.LinkBtnStyled> );
+const navigate = useNavigate()
+
+const handleNavigate = ():void => navigate("slide")
+
+    return ( <SC.LinkBtnStyled onClick={handleNavigate}>start slideshow</SC.LinkBtnStyled> );
 }
  
 export default LinkBtn;

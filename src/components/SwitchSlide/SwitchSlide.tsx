@@ -16,9 +16,14 @@ type Props = {
 const SwitchSlide:React.FC<Partial <ImageType> & Props> = ({name, artist, switchSlide, idx}) => {
 const {collection} = useContext(CollectionContext)
 
+const gradient =
+((idx + 1) /
+  collection!.length) *
+100;
+
     return ( 
     <>
-    <SC.Scale></SC.Scale>
+    <SC.Scale now={gradient}></SC.Scale>
     <SC.CommonCon>
         <div>
             <SC.Picture>{name}</SC.Picture>

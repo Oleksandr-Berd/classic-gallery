@@ -1,16 +1,21 @@
 import styled from "@emotion/styled";
+import { ProgressBar } from "react-bootstrap";
 
 type StyleProps = {
     isDisabled:boolean
 }
 
-export const Scale = styled.div`
+export const Scale = styled(ProgressBar)`
   width: calc(100% + 24px * 2);
   height: 1px;
 
   transform: translateX(-24px);
 
-  background-color: #e5e5e5;
+  background-color: #d8d8d8;
+
+  &&& > div{
+    background-color: #000;
+  }
 `;
 
 export const CommonCon = styled.div`

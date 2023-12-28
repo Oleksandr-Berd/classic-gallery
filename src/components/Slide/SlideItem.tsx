@@ -8,9 +8,11 @@ import SwitchSlide from '../SwitchSlide/SwitchSlide';
 
 type Props = {
   slide: ImageType | React.ReactElement;
+  switchSlide:any;
+  idx:number;
 };
 
-const SlideItem: React.FC<Props> = ({ slide }) => {
+const SlideItem: React.FC<Props> = ({ slide , switchSlide, idx}) => {
     const [isModal, setIsModal] = useState<boolean>(false)
 
     const handleModal = () => {
@@ -20,9 +22,6 @@ const SlideItem: React.FC<Props> = ({ slide }) => {
     if (typeof slide === "object") {
     const { description, artist, name, images, year, source } =
       slide as ImageType;
-
-
-console.log(isModal);
 
     return (
       <SC.CommonCon>
@@ -45,7 +44,7 @@ console.log(isModal);
           go to source
         </SC.SourceLink>
 
-        <SwitchSlide name={name} artist={artist}/>
+        <SwitchSlide name={name} artist={artist} switchSlide={switchSlide} idx={idx}/>
       </SC.CommonCon>
     );
   } else {

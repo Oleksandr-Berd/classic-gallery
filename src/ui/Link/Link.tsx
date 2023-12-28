@@ -1,12 +1,23 @@
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import * as SC from './LinkStyled'
 
-const LinkBtn = () => {
+const LinkBtn:React.FC = () => {
 const navigate = useNavigate()
+const location = useLocation()
 
-const handleNavigate = ():void => navigate("slide")
+const {pathname} = location
 
-    return ( <SC.LinkBtnStyled onClick={handleNavigate}>start slideshow</SC.LinkBtnStyled> );
+
+const handleNavigate = ():void => {
+    if (pathname === "/slide") {
+        navigate("/")
+    } else {
+    navigate("slide")
+
+    }
+}
+
+    return ( <SC.LinkBtnStyled onClick={handleNavigate}>  {pathname === "/slide" ? "stop" : "start"} slideshow</SC.LinkBtnStyled> );
 }
  
 export default LinkBtn;

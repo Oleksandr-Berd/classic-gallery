@@ -3,6 +3,7 @@ import React from "react";
 import * as SC from './ImageListStyled'
 
 import { ImageType } from "../../utils/types";
+import Loader from "../Loader/Loader";
 
 type ImagesListProps = {
   images: ImageType[] | null;
@@ -17,7 +18,7 @@ const ImagesList: React.FC<ImagesListProps> = ({ images }) => {
                 <SC.ImageName>{name}</SC.ImageName>
                 <SC.ArtistName>{artist.name}</SC.ArtistName>
             </SC.ContentCon>
-        </SC.ImageItem>) : <></>}
+        </SC.ImageItem>) : <Loader></Loader>}
     </SC.ImageListStyled>
   );
 };

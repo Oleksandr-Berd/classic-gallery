@@ -31,6 +31,7 @@ const SlideShowPage = () => {
     return <Loader />;
   };
 
+
   return (
     <section>
       <SlideItem slide={handleSlideItem(idx)} switchSlide={switchSlide} idx={idx}/>

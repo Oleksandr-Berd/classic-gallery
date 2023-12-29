@@ -13,10 +13,20 @@ const HomePage: React.FC = () => {
     if (result) setImages(result);
   };
 
+
+
   useEffect(() => {
     fetchImages();
-    getCollection(images!)
+  }, []);
+
+  useEffect(() => {
+    if (images) {
+      getCollection(images);
+    }
   }, [getCollection, images]);
+
+console.log(images);
+
 
   return (
     <section>

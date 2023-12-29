@@ -16,6 +16,8 @@ type Props = {
 const SlideItem: React.FC<Props> = ({ slide , switchSlide, idx}) => {
     const [isModal, setIsModal] = useState<boolean>(false)
 
+
+    
     const handleModal = () => {
         setIsModal(!isModal)
     }

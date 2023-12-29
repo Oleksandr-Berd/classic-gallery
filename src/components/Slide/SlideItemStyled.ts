@@ -24,6 +24,8 @@ export const ImageCon = styled.div`
   margin-bottom: 172px;
 
   @media (min-width: 768px) {
+    margin-bottom: 139px;
+
     & > img:first-of-type {
       width: 475px;
       height: 560px;
@@ -167,6 +169,13 @@ export const ContentCon = styled.div`
 
     color: #7d7d7d;
   }
+
+  @media (min-width: 768px){
+    padding-left: calc(155px - 40px);
+    padding-right: calc(156px - 40px);
+
+    margin-bottom: 40px;
+  }
 `;
 
 export const Year = styled.div`
@@ -180,10 +189,25 @@ export const Year = styled.div`
 
   text-align: right;
 
-  font-family: "BaskBold";
-  font-size: 100px;
-
   color: #e5e5e5;
+
+  & > h4 {
+    font-family: "BaskBold";
+    font-size: 100px;
+  }
+
+  @media (min-width: 768px) {
+
+left:0;
+right: auto;
+
+transform: translateY(-120px);
+
+
+    & > h4 {
+      font-size: 200px;
+    }
+  }
 `;
 
 export const SourceLink = styled(NavLink)`
@@ -199,4 +223,10 @@ export const SourceLink = styled(NavLink)`
   letter-spacing: 1.93px;
 
   color: #7d7d7d;
+
+  @media (min-width: 768px){
+    padding-left: calc(155px - 40px);
+
+    margin-bottom: 53px;
+  }
 `;

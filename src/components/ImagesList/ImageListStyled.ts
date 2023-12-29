@@ -24,6 +24,13 @@ export const ImageListStyled = styled.ul`
     padding-left: 40px;
     padding-right: 40px;
   }
+
+  @media (min-width: 1440px){
+  grid-template-columns: repeat(auto-fill, minmax(310px, 4fr));
+  
+
+
+  }
 `;
 
 export const ImageItem = styled.li<StyleProps>`
@@ -49,6 +56,12 @@ export const ImageItem = styled.li<StyleProps>`
     width: 100%;
     min-height: 100%;
     background: linear-gradient(transparent 50%, #000);
+  }
+
+  @media (min-width: 1440px){
+    & > img{
+        height: 100%;
+    }
   }
 `;
 

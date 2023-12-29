@@ -1,7 +1,6 @@
 import React from "react";
 import * as SC from "./ImageListStyled";
 import { ImageType } from "../../utils/types";
-import Loader from "../Loader/Loader";
 import { useMediaQuery } from "usehooks-ts";
 
 type ImagesListProps = {
@@ -9,8 +8,9 @@ type ImagesListProps = {
 };
 
 const ImagesList: React.FC<ImagesListProps> = ({ images }) => {
-  const isTablet = useMediaQuery("(min-width:768px)");
+  const isTablet = useMediaQuery("(min-width:768px) and (max-width:1439px");
   const isMobile = useMediaQuery("(max-width:767px)");
+const isDesktop = useMediaQuery("(min-width:1440px)")
 
   return (
     <SC.ImageListStyled>
@@ -51,7 +51,17 @@ null      )}
       ) : (
 null      )}
 
-      {isMobile && images ? (
+      {isMobile  && images ? (
+        images.map(({ images, _id, artist, name }) => (
+          <SC.ImageItem key={_id}>
+            <img src={images.thumbnail} alt="images" />
+            <SC.ContentCon>
+              <SC.ImageName>{name}</SC.ImageName>
+              <SC.ArtistName>{artist.name}</SC.ArtistName>
+            </SC.ContentCon>
+          </SC.ImageItem>
+        ))
+      ) : isDesktop  && images ? (
         images.map(({ images, _id, artist, name }) => (
           <SC.ImageItem key={_id}>
             <img src={images.thumbnail} alt="images" />

@@ -16,6 +16,19 @@ export const CommonCon = styled.div<Partial<StyleProps>>`
     padding-left: 40px;
     padding-right: 40px;
   }
+
+  @media (min-width: 1440px) {
+    padding-top: 100px;
+  }
+`;
+
+export const FlexCon = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: space-between;
+
+  padding-bottom: 128px;
 `;
 
 export const ImageCon = styled.div`
@@ -30,6 +43,10 @@ export const ImageCon = styled.div`
       width: 475px;
       height: 560px;
     }
+  }
+
+  @media (min-width: 1440px) {
+    margin-bottom: 0;
   }
 `;
 
@@ -124,6 +141,19 @@ export const NameCon = styled.div`
       height: 128px;
     }
   }
+
+  @media (min-width: 1440px) {
+    width: auto;
+
+    transform: translateX(410px) translateY(-10px);
+
+    & > img {
+      left: 0;
+      right: auto;
+
+      transform: translateX(99px) translateY(calc(342px + 128px / 2));
+    }
+  }
 `;
 
 export const Picture = styled.h2`
@@ -170,11 +200,22 @@ export const ContentCon = styled.div`
     color: #7d7d7d;
   }
 
-  @media (min-width: 768px){
+  @media (min-width: 768px) {
     padding-left: calc(155px - 40px);
     padding-right: calc(156px - 40px);
 
     margin-bottom: 40px;
+  }
+
+  @media (min-width: 1440px) {
+    padding-left: 0;
+    padding-right: calc(165px - 40px);
+
+    margin-bottom: 0;
+
+    & > p {
+      width: 350px;
+    }
   }
 `;
 
@@ -197,16 +238,19 @@ export const Year = styled.div`
   }
 
   @media (min-width: 768px) {
+    left: 0;
+    right: auto;
 
-left:0;
-right: auto;
-
-transform: translateY(-120px);
-
+    transform: translateY(-120px);
 
     & > h4 {
       font-size: 200px;
+      line-height: 0.75;
     }
+  }
+
+  @media (min-width: 1440px) {
+    transform: translateY(-100px);
   }
 `;
 
@@ -224,9 +268,25 @@ export const SourceLink = styled(NavLink)`
 
   color: #7d7d7d;
 
-  @media (min-width: 768px){
+  @media (min-width: 768px) {
     padding-left: calc(155px - 40px);
 
     margin-bottom: 53px;
   }
+
+  @media (min-width: 1440px) {
+    padding-left: 0;
+
+    margin-top: 81px;
+    margin-bottom: 0;
+  }
 `;
+
+export const ArtistImage = styled.img`
+position: absolute;
+
+bottom: 0;
+right:0;
+
+transform: translateX(158px) translateY(69px);
+`

@@ -3,9 +3,12 @@ import { NavLink } from "react-router-dom";
 
 type StyleProps = {
   openIcon: string;
+  isModal: boolean
 };
 
-export const CommonCon = styled.div`
+export const CommonCon = styled.div<Partial <StyleProps>>`
+
+
   padding-top: 24px;
   padding-left: 24px;
   padding-right: 24px;
@@ -18,7 +21,7 @@ export const ImageCon = styled.div`
 margin-bottom: 172px;
 `;
 
-export const ModalButton = styled.button<StyleProps>`
+export const ModalButton = styled.button<Partial <StyleProps>>`
   position: absolute;
   top: 0;
   left: 0;

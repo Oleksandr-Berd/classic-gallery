@@ -25,9 +25,6 @@ const HomePage: React.FC = () => {
     }
   }, [getCollection, images]);
 
-console.log(images);
-
-
   return (
     <section>
       <ImagesList images={images ? images : null} />

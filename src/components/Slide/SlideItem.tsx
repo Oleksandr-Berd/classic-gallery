@@ -6,6 +6,7 @@ import modalOpen from '../../assets/images/modal_open.svg'
 import { useState } from "react";
 import SwitchSlide from '../SwitchSlide/SwitchSlide';
 import ModalWin from '../ModalWin/ModalWin';
+import { useMediaQuery } from 'usehooks-ts';
 
 type Props = {
   slide: ImageType | React.ReactElement;
@@ -16,7 +17,7 @@ type Props = {
 const SlideItem: React.FC<Props> = ({ slide , switchSlide, idx}) => {
     const [isModal, setIsModal] = useState<boolean>(false)
 
-
+    const isTablet = useMediaQuery("(min-width:768px)")
     
     const handleModal = () => {
         setIsModal(!isModal)
@@ -30,7 +31,7 @@ const SlideItem: React.FC<Props> = ({ slide , switchSlide, idx}) => {
       <SC.CommonCon isModal={isModal}>
         {isModal ? <ModalWin handleModal={handleModal} picture={images.gallery}/>  : null}
         <SC.ImageCon>
-          <img src={images.thumbnail} alt={name} />
+          <img src={isTablet ? images.hero.large : images.thumbnail} alt={name} />
           <SC.ModalButton openIcon={modalOpen} onClick={handleModal}>view image</SC.ModalButton>
           <SC.NameCon>
             <SC.Picture>{name}</SC.Picture>

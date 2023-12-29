@@ -18,6 +18,11 @@ export const Overlay = styled.div`
   padding-right: 24px;
 
   background: rgba(0, 0, 0, 0.9);
+
+  @media (min-width: 768px) {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
 `;
 
 export const CommonCon = styled.div`
@@ -28,7 +33,7 @@ export const CommonCon = styled.div`
     height: 100%;
   }
 
-  & > button{
+  & > button {
     margin-bottom: 33px;
 
     text-transform: uppercase;
@@ -39,7 +44,13 @@ export const CommonCon = styled.div`
 
     background-color: transparent;
     color: #fff;
-    
+
     border: none;
+  }
+
+  @media (min-width: 1440px) {
+    & > button {
+      margin-bottom: 41px;
+    }
   }
 `;

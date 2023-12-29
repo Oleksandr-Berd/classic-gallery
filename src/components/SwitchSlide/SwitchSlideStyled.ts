@@ -1,10 +1,6 @@
 import styled from "@emotion/styled";
 import { ProgressBar } from "react-bootstrap";
 
-type StyleProps = {
-    isDisabled:boolean
-}
-
 export const Scale = styled(ProgressBar)`
   width: calc(100% + 24px * 2);
   height: 1px;
@@ -13,8 +9,15 @@ export const Scale = styled(ProgressBar)`
 
   background-color: #d8d8d8;
 
-  &&& > div{
+  &&& > div {
     background-color: #000;
+  }
+
+  @media (min-width: 768px){
+  width: calc(100% + 40px * 2);
+
+  transform: translateX(-40px);
+
   }
 `;
 
@@ -26,6 +29,11 @@ export const CommonCon = styled.div`
 
   padding-top: 17px;
   padding-bottom: 16px;
+
+  @media (min-width: 768px) {
+    padding-top: 25px;
+    padding-bottom: 24px;
+  }
 `;
 
 export const Picture = styled.h5`
@@ -35,6 +43,10 @@ export const Picture = styled.h5`
   font-size: 14px;
 
   color: #000;
+
+  @media (min-width: 768px) {
+    font-size: 18px;
+  }
 `;
 
 export const Artist = styled.h6`
@@ -42,13 +54,17 @@ export const Artist = styled.h6`
   font-size: 10px;
 
   color: rgba(0, 0, 0, 0.75);
+
+  @media (min-width: 768px) {
+    font-size: 23px;
+  }
 `;
 
 export const ButtonCon = styled.div`
   display: flex;
   flex-direction: row;
 
-  &:first-of-type {
+  & > button:first-of-type {
     margin-right: 23px;
   }
 
@@ -59,7 +75,18 @@ export const ButtonCon = styled.div`
     border: none;
   }
 
-  & > *:disabled svg{
+  & > *:disabled svg {
     fill: #d8d8d8;
   }
-`
+
+  @media (min-width: 768px) {
+    & > button:first-of-type {
+      margin-right: 40px;
+    }
+
+    & svg {
+      width: 25px;
+      height: 24px;
+    }
+  }
+`;
